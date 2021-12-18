@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Praktikum6</title>
+</head>
+<style>
+svg {
+    display: block;
+    margin: auto;
+  }
+  table {
+    font-family: gilroy;
+    text-align: center;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  #button td input {
+    width: 100%;
+  }
+  
+  .container{
+    display: flex;
+    justify-content: center;
+    background-color: rgb(214, 134, 184);
+  }
+
+  .container-fluid {
+    display: flex;
+    justify-content: center;
+    background-color: rgb(255, 255, 255);
+  }
+
+  .column{
+    margin: 10px 0;
+    font-size: 0.6em;
+  }
+  
+  .styled-table {
+    margin-left: auto;
+    margin-right: auto;
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.8em;
+    font-family: gilroy;
+    min-width: 400px;
+  }
+  
+  .styled-table thead tr {
+    background-color: #39a5cf;
+    color: #0f0f0f;
+    text-align: center;
+  }
+  
+  .styled-table th,
+  .styled-table td {
+    padding: 8px 10px;
+  }
+  
+  .styled-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+  }
+  
+  .styled-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+  }
+  
+  .styled-table tbody tr:last-of-type {
+    border-bottom: 2px solid #0f0f0f;
+  }
+  
+  .column {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .column h2 {
+    margin-top: 20px;
+    text-align: center;
+    font-family: gilroy;
+  }</style>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+        <img src="logo2.jpg" alt="" width="80">
+            <h1 style="align-self: center;">PT. Once Sejahtera</h1>
+    </div>
+</nav>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="column mx-auto">
+                <table border="3">
+                    <thead>
+                        <tr>
+                            <th>Nama Pelanggan</th>
+                            <td><input type="text" name="pelanggan" id="nama_pelanggan"></td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th>Kategori</th>
+                            <td colspan="2">
+                                <select id="listKategori">
+                                    <option value="Sosial">Sosial</option>
+                                    <option value="Rumah">Rumah</option>
+                                    <option value="Apartemen">Apartemen</option>
+                                    <option value="Industri">Industri</option>
+                                    <option value="Villa">Villa</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>Jumlah Pemakaian</th>
+                            <td colspan="2"><input type="number" id="hari" name="hari" min="" max="30"></td>
+                        </tr>
+                        <tr id="button">
+                            <td colspan="2"><input type="button" name="button" id="button" value="Calculate"
+                                    onclick="hitung()"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="column">
+
+                <h2>Rincian Tagihan</h2>
+
+                <table class="styled-table">
+                    <thead>
+                        <tr>
+                            <th>Jumlah</th>
+                            <th>Tarif per KWH</th>
+                            <th>Abodemen</th>
+                            <th>Sub-Total</th>
+                        </tr>
+                    </thead>
+                    <tbody id="hasil">
+                        <tr>
+                            <td>Jumlah</td>
+                            <td>Tarif per-KWH</td>
+                            <td>Abodemen</td>
+                            <td>Subtotal</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="column">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Subtotal</th>
+                            <td id="sub_total"></td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th>Pajak</th>
+                            <td id="pajak"></td>
+                        </tr>
+                        <tr>
+                            <th>Bayar</th>
+                            <td id="bayar"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    
+</body>
+</html>
